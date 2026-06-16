@@ -36,7 +36,7 @@ against live HTTP + real fixtures, never asserted.** Credibility is the product.
 | GIS (LINK-OUT ONLY) | `https://mapservices.weather.noaa.gov/tropical/rest/services/tropical/NHC_tropical_weather/MapServer` | cite layer ids for "more info" |
 
 - **Auth:** descriptive `User-Agent` required (NWS rejects blank). Use
-  `nhc-pp-cli/<ver> (github.com/abe238/nhc-pp-cli; abe238@gmail.com)`.
+  `nhc-pp-cli/<ver> (github.com/abe238/nhc-pp-cli)`.
 - **Quiet-season contract:** `CurrentStorms.json` → `{activeStorms:[]}` (verified live today,
   2026-06-15). With zero active storms the CLI MUST still be useful: clean "no active storms"
   result that points to the Tropical Weather Outlook.

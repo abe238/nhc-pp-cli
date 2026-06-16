@@ -27,7 +27,7 @@ import (
 // userAgent is the descriptive UA every NHC/NWS request must carry. The
 // generated client already sends it; the tiny text/HTML fetch helper below
 // sets it explicitly for products that the JSON client would not handle.
-const userAgent = "nhc-pp-cli (github.com/abe238/nhc-pp-cli; abe238@gmail.com)"
+const userAgent = "nhc-pp-cli (github.com/abe238/nhc-pp-cli)"
 
 // mapServerBase is the ArcGIS REST service root for NHC tropical layers.
 // gis links to it but never ingests it.

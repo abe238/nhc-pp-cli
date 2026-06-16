@@ -16,7 +16,7 @@ binary blobs. Every command maps to a verified source in
 - **Storm id** accepts the ATCF form case-insensitively: `al092024` / `AL092024`,
   and a loose `helene` name match (resolved against the active feed).
 - **User-Agent** is sent on every request:
-  `nhc-pp-cli/0.1 (github.com/abe238/nhc-pp-cli; abe238@gmail.com)`. Mandatory for
+  `nhc-pp-cli/0.1 (github.com/abe238/nhc-pp-cli)`. Mandatory for
   `api.weather.gov` (403 without).
 - **`--fixture <path>` (and stdin)** reads a saved payload from disk instead of
   fetching, for testing/offline use. Every command MUST accept it; this is the

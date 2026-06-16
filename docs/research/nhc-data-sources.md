@@ -3,7 +3,7 @@
 Every claim below is grounded in real HTTP captures and the fixtures saved under
 `/Users/abediaz/ghostex/chats/nhc-pp/fixtures/`. Status codes, byte counts, field
 names, and URLs are observed, not inferred. Fetches used
-`User-Agent: nhc-pp-cli/0.1 (github.com/abe238/nhc-pp-cli; abe238@gmail.com)`.
+`User-Agent: nhc-pp-cli/0.1 (github.com/abe238/nhc-pp-cli)`.
 
 ## Quick reference table
 

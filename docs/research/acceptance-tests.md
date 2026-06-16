@@ -201,7 +201,7 @@ Fixture: `fixtures/mapserver/NHC_tropical_weather_MapServer.json`
 - **I2 — human mode.** `--format human` (and `--md`) MUST emit non-JSON text and
   MUST still include the headline fact (e.g. storm name + cone URL).
 - **I3 — User-Agent.** Live (non-fixture) calls MUST send
-  `nhc-pp-cli/0.1 (github.com/abe238/nhc-pp-cli; abe238@gmail.com)`. (Regression
+  `nhc-pp-cli/0.1 (github.com/abe238/nhc-pp-cli)`. (Regression
   guard: api.weather.gov returns 403 without it.)
 - **I4 — no `limit` on active alerts.** The CLI MUST NOT send `limit` to
   `/alerts/active` (would 400); if a limit is desired it is applied client-side.

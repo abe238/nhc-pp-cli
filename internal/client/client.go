@@ -497,7 +497,7 @@ func (c *Client) doInternal(ctx context.Context, method, path string, params map
 		if authHeader != "" {
 			req.Header.Set("Authorization", authHeader)
 		}
-		req.Header.Set("User-Agent", "nhc-pp-cli (github.com/abe238/nhc-pp-cli; abe238@gmail.com)")
+		req.Header.Set("User-Agent", "nhc-pp-cli (github.com/abe238/nhc-pp-cli)")
 		if c.Config != nil {
 			for k, v := range c.Config.Headers {
 				req.Header.Set(k, v)

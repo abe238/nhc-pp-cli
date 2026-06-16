@@ -10,7 +10,7 @@
   "required_headers": [
     {
       "name": "User-Agent",
-      "value": "nhc-pp-cli (github.com/abe238/nhc-pp-cli; abe238@gmail.com)"
+      "value": "nhc-pp-cli (github.com/abe238/nhc-pp-cli)"
     }
   ],
   "tools": [

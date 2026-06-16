@@ -5,7 +5,7 @@ base_url: "https://www.nhc.noaa.gov"
 health_check_path: "/CurrentStorms.json"
 required_headers:
   - name: User-Agent
-    value: "nhc-pp-cli (github.com/abe238/nhc-pp-cli; abe238@gmail.com)"
+    value: "nhc-pp-cli (github.com/abe238/nhc-pp-cli)"
 
 auth:
   type: none
