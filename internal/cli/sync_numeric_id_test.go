@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"nhc-pp-cli/internal/store"
+	"github.com/abe238/nhc-pp-cli/internal/store"
 )
 
 func TestSyncSingleObject_PreservesLargeIntegerResourceIDs(t *testing.T) {

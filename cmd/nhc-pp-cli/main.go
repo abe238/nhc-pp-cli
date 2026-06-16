@@ -6,7 +6,7 @@ package main
 import (
 	"os"
 
-	"nhc-pp-cli/internal/cli"
+	"github.com/abe238/nhc-pp-cli/internal/cli"
 )
 
 func main() {

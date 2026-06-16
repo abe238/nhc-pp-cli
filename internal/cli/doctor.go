@@ -14,10 +14,10 @@ import (
 	"time"
 
 	"github.com/spf13/cobra"
-	"nhc-pp-cli/internal/client"
-	"nhc-pp-cli/internal/cliutil"
-	"nhc-pp-cli/internal/config"
-	"nhc-pp-cli/internal/store"
+	"github.com/abe238/nhc-pp-cli/internal/client"
+	"github.com/abe238/nhc-pp-cli/internal/cliutil"
+	"github.com/abe238/nhc-pp-cli/internal/config"
+	"github.com/abe238/nhc-pp-cli/internal/store"
 )
 
 // looksLikeDoctorInterstitial reports whether the response body matches a known

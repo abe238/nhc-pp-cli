@@ -12,7 +12,7 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 	"io"
-	"nhc-pp-cli/internal/client"
+	"github.com/abe238/nhc-pp-cli/internal/client"
 	"os"
 	"path/filepath"
 	"sort"

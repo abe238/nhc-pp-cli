@@ -12,7 +12,7 @@ import (
 	"strings"
 
 	"github.com/spf13/cobra"
-	"nhc-pp-cli/internal/cliutil"
+	"github.com/abe238/nhc-pp-cli/internal/cliutil"
 )
 
 func newNovelGraphicsCmd(flags *rootFlags) *cobra.Command {

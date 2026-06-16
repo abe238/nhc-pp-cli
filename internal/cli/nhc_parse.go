@@ -21,7 +21,7 @@ import (
 	"strings"
 	"time"
 
-	"nhc-pp-cli/internal/cliutil"
+	"github.com/abe238/nhc-pp-cli/internal/cliutil"
 )
 
 // userAgent is the descriptive UA every NHC/NWS request must carry. The

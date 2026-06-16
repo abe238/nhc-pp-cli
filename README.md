@@ -4,9 +4,28 @@
 
 nhc-pp-cli gives agents the most credible real-time hurricane information straight from the National Hurricane Center and the National Weather Service: active storms (CurrentStorms.json), parsed Public Advisories and Forecast Discussions, the Tropical Weather Outlook with formation odds, and live tropical watches and warnings. It is built text-first and links out to the official GIS for anyone who wants polygons. Deep thanks to the forecasters, hurricane hunters, and support staff at NHC who sacrifice so much for the safety of so many. This is an unofficial tool; in an emergency, follow the official watches, warnings, and evacuation orders from NHC, the NWS, and your local authorities.
 
-## Install
+## Install from source
 
-The recommended path installs both the `nhc-pp-cli` binary and the `pp-nhc` agent skill (Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot, and other agents supported by the upstream [`skills`](https://github.com/vercel-labs/skills) CLI) in one shot:
+This repository builds with the Go toolchain (1.26.4 or newer):
+
+```bash
+go install github.com/abe238/nhc-pp-cli/cmd/nhc-pp-cli@latest
+```
+
+Or clone and build the CLI plus the bundled MCP server:
+
+```bash
+git clone https://github.com/abe238/nhc-pp-cli
+cd nhc-pp-cli
+make build       # binaries in ./bin
+go test ./...    # parsers verified against real 2024-season fixtures in internal/cli/testdata
+```
+
+Then run `nhc-pp-cli doctor` (no API key needed) and `nhc-pp-cli brief --markdown` for a one-call situational briefing.
+
+## Install via the Printing Press library
+
+Once this CLI is published to the public library, one command installs both the `nhc-pp-cli` binary and the `pp-nhc` agent skill (Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot, and other agents supported by the upstream [`skills`](https://github.com/vercel-labs/skills) CLI):
 
 ```bash
 npx -y @mvanhorn/printing-press-library install nhc

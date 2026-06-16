@@ -1,4 +1,4 @@
-module nhc-pp-cli
+module github.com/abe238/nhc-pp-cli
 
 go 1.26
 

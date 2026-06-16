@@ -17,8 +17,8 @@ import (
 	"strings"
 	"time"
 
-	"nhc-pp-cli/internal/client"
-	"nhc-pp-cli/internal/store"
+	"github.com/abe238/nhc-pp-cli/internal/client"
+	"github.com/abe238/nhc-pp-cli/internal/store"
 )
 
 const networkFallbackReason = "api_unreachable"

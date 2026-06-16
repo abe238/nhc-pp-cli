@@ -17,11 +17,11 @@ import (
 
 	mcplib "github.com/mark3labs/mcp-go/mcp"
 	"github.com/mark3labs/mcp-go/server"
-	"nhc-pp-cli/internal/cli"
-	"nhc-pp-cli/internal/client"
-	"nhc-pp-cli/internal/config"
-	"nhc-pp-cli/internal/mcp/cobratree"
-	"nhc-pp-cli/internal/store"
+	"github.com/abe238/nhc-pp-cli/internal/cli"
+	"github.com/abe238/nhc-pp-cli/internal/client"
+	"github.com/abe238/nhc-pp-cli/internal/config"
+	"github.com/abe238/nhc-pp-cli/internal/mcp/cobratree"
+	"github.com/abe238/nhc-pp-cli/internal/store"
 )
 
 const (

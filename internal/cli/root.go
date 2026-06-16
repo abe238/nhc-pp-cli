@@ -13,8 +13,8 @@ import (
 	"time"
 
 	"github.com/spf13/cobra"
-	"nhc-pp-cli/internal/client"
-	"nhc-pp-cli/internal/config"
+	"github.com/abe238/nhc-pp-cli/internal/client"
+	"github.com/abe238/nhc-pp-cli/internal/config"
 )
 
 type rootFlags struct {
