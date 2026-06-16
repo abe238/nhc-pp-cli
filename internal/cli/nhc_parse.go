@@ -180,23 +180,23 @@ type gisLink struct {
 // are pointer-typed WITHOUT omitempty so a nil maps to JSON `null`
 // (present-but-null), satisfying the verified null contract for Isaac/John.
 type stormDetail struct {
-	ID             string  `json:"id"`
-	Name           string  `json:"name"`
-	BinNumber      string  `json:"binNumber"`
-	Classification string  `json:"classification"`
+	ID             string `json:"id"`
+	Name           string `json:"name"`
+	BinNumber      string `json:"binNumber"`
+	Classification string `json:"classification"`
 	// IntensityKt/PressureMb are *int so an absent or non-numeric source value
 	// serializes as JSON null (honest unknown) rather than a fabricated 0,
 	// which a safety tool must never present as a real measurement (0 kt =
 	// calm). The verified Helene fixture carries both, so they stay non-nil.
-	IntensityKt    *int    `json:"intensity_kt"`
-	PressureMb     *int    `json:"pressure_mb"`
-	Lat            float64 `json:"lat"`
-	Lon            float64 `json:"lon"`
-	Latitude       string  `json:"latitude"`
-	Longitude      string  `json:"longitude"`
-	MovementDir    int     `json:"movementDir"`
-	MovementSpeed  int     `json:"movementSpeed_kt"`
-	LastUpdate     string  `json:"lastUpdate"`
+	IntensityKt   *int    `json:"intensity_kt"`
+	PressureMb    *int    `json:"pressure_mb"`
+	Lat           float64 `json:"lat"`
+	Lon           float64 `json:"lon"`
+	Latitude      string  `json:"latitude"`
+	Longitude     string  `json:"longitude"`
+	MovementDir   int     `json:"movementDir"`
+	MovementSpeed int     `json:"movementSpeed_kt"`
+	LastUpdate    string  `json:"lastUpdate"`
 
 	Products struct {
 		PublicAdvisory         *textProduct `json:"publicAdvisory"`
@@ -996,7 +996,7 @@ func httpGetText(ctx context.Context, url string) ([]byte, error) {
 		return nil, err
 	}
 	defer resp.Body.Close()
-	body, err := io.ReadAll(resp.Body)
+	body, err := io.ReadAll(io.LimitReader(resp.Body, maxGraphicsBytes))
 	if err != nil {
 		return nil, err
 	}

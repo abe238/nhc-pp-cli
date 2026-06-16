@@ -12,7 +12,6 @@ import (
 
 func newNovelAdvisoryCmd(flags *rootFlags) *cobra.Command {
 	var flagType string
-	var flagNumber string
 	var flagRaw bool
 	var flagFixture string
 
@@ -38,7 +37,7 @@ func newNovelAdvisoryCmd(flags *rootFlags) *cobra.Command {
 				typ = "tcp"
 			}
 			switch typ {
-			case "tcp", "tcd", "tcm", "pws":
+			case "tcp", "tcd", "tcm":
 			default:
 				return usageErr(fmt.Errorf("advisory: invalid --type %q (want tcp, tcd, or tcm)", flagType))
 			}
@@ -82,6 +81,9 @@ func newNovelAdvisoryCmd(flags *rootFlags) *cobra.Command {
 			}
 			ctx, cancel := boundCtx(cmd.Context(), flags)
 			defer cancel()
+			if _, verr := validateGraphicsURL(url); verr != nil {
+				return apiErr(verr)
+			}
 			body, err := httpGetText(ctx, url)
 			if err != nil {
 				return apiErr(err)
@@ -94,10 +96,8 @@ func newNovelAdvisoryCmd(flags *rootFlags) *cobra.Command {
 		},
 	}
 	cmd.Flags().StringVar(&flagType, "type", "tcp", "Product type: tcp (public), tcd (discussion), tcm (forecast/marine)")
-	cmd.Flags().StringVar(&flagNumber, "number", "", "Advisory number (default: latest from the active feed)")
 	cmd.Flags().BoolVar(&flagRaw, "raw", false, "Emit only the extracted product body text")
 	cmd.Flags().StringVar(&flagFixture, "fixture", "", "Parse a saved product body or .shtml (path or - for stdin) instead of fetching live")
-	_ = flagNumber
 	return cmd
 }
 
@@ -115,10 +115,6 @@ func advisoryProductURL(s *rawStorm, typ string) string {
 	case "tcm":
 		if s.ForecastAdvisory != nil {
 			return s.ForecastAdvisory.URL
-		}
-	case "pws":
-		if s.WindSpeedProbabilities != nil {
-			return s.WindSpeedProbabilities.URL
 		}
 	}
 	return ""
